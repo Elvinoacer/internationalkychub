@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { products } from "@/app/data/products";
-import { Header } from "@/app/components/landing/Header";
-import { Footer } from "@/app/components/landing/Footer";
+
 import {
   ShoppingCartIcon,
   ShieldCheckIcon,
@@ -12,6 +11,7 @@ import {
   ChartBarIcon,
 } from "@/app/components/icons";
 import { use } from "react";
+import Link from "next/link";
 
 // Helper for status badge colors
 const getStatusStyles = (status: string) => {
@@ -67,18 +67,17 @@ export default function AccountDetailPage({
 
   return (
     <div className="flex min-h-screen flex-col bg-gray-50 dark:bg-gray-950 selection:bg-blue-500/30">
-      <Header />
 
       <main className="flex-1 py-10 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb */}
           <nav className="mb-8 flex items-center text-sm text-gray-500 dark:text-gray-400">
-            <a
+            <Link
               href="/"
               className="hover:text-gray-900 dark:hover:text-white transition-colors"
             >
               Home
-            </a>
+            </Link>
             <span className="mx-2 text-gray-300">/</span>
             <span className="hover:text-gray-900 dark:hover:text-white transition-colors">
               Accounts
@@ -330,7 +329,6 @@ export default function AccountDetailPage({
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
